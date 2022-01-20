@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>자바스크립트 슬라이드 애니메이션</title>
+	<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+	<style>
+		*{margin: 0 auto; padding: 0; list-style: none;}
+		.main{width: 900px; height: 300px; position: relative; top: 200px;overflow: hidden;}
+		.main .slidelist{width: 4500px; position: absolute; left: -1200px; top: 50px; transition: 0.4s;}
+		.main .slidelist ul{}
+		.main .slidelist ul li{float: left; width: 200px; height: 200px; margin: 0 50px; background: blue; font-size: 2.0em; text-align: center; transition: 0.4s; color: #fff;}		
+		
+		.dot{width: 150px; height: 20px; position: relative; top: 200px;}
+		.dot span{display: block; float: left; width: 20px; height: 20px; margin: 0 5px; border-radius: 10px; background: orange; cursor: pointer;}
+		.dot span:first-of-type{background: black;}
+		
+		.button{width: 100px; height: 50px; margin-left: -50px; position: relative; left: 50%; top: 350px;}
+		.button button{padding: 10px;}
+		.button button:first-of-type{float:left;}
+		.button button:last-of-type{float: right;}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="slidelist">
+			<ul>	<!--자바스크립트 클론 이용하여 li태그 총15개-->
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</div>
+	<div class="dot">
+		<span onClick="cys(0)"></span><span onClick="cys(1)"></span><span onClick="cys(2)"></span><span onClick="cys(3)"></span><span onClick="cys(4)"></span>
+	</div>
+    <div class="button">
+        <button>&lt;</button><button>&gt;</button>
+    </div>
+</body>
+	<script>
+		const copy = $(".slidelist ul li");
+		$(copy).clone().appendTo(".slidelist ul");
+		$(copy).clone().appendTo(".slidelist ul");	// li태그 복사 (총15개)
+		
+		var index = 0;	// 이미지 슬라이드 위치값 변수
+		
+		function cys(e){
+			index = e;
+			$(".slidelist").css({"left":-1200 + (index * -300) + "px","transition":"0.4s"});
+			$(".dot span").css("background","orange");
+			$(".dot span").eq(index).css("background","black");
+		}
+		var click=true;
+        
+		function arrow(e){
+            if(click==true){
+                click=false
+                index += e;
+                $(".slidelist").css({"left":-1200 + (index * -300) + "px","transition":"0.4s"});
+                $(".dot span").css("background","orange");
+                $(".dot span").eq(index).css("background","black");        
+                if(index == 5){
+                    index = 0;
+                    $(".dot span").eq(index).css("background","black");
+                    setTimeout(function(){
+                        $(".slidelist").css({"left":-1200 + (index * -300) + "px","transition":"0s"});
+                    }, 400);
+                }else if (index == -4){
+                    index = 1;
+                    $(".dot span").eq(index).css("background","black");
+
+                    setTimeout(function(){
+                        $(".slidelist").css({"left":-1200 + (index * -300) + "px","transition":"0s"});
+                    }, 400);
+                }
+                setTimeout(function(){click=true},410)
+            }
+		}
+		$(".button button:nth-of-type(1)").click(function(){
+            arrow(-1);
+            clearInterval(slideauto);
+                                                           });
+		$(".button button:nth-of-type(2)").click(function(){
+            arrow(1);
+            clearInterval(slideauto);
+            
+                                                           });
+       var slideauto = setInterval(function(){
+                        arrow(1)},3000);               
+	</script>
+</html>
+
+  
+
