@@ -10,7 +10,7 @@
         .center{width: 1200px; margin: 20px auto;}
 		i{font-style: normal;}
 
-        #header{display: flex; justify-content: space-between; max-width: 1200px; min-width:300px; height:70px; margin: 0 auto; background: #fff;}
+        #header{display: flex; justify-content: space-between; width: 1200px; height:70px; margin: 0 auto; background: #fff;}
         #header .covermenu{display: none; position: absolute; height: 350px; top: 50px;  z-index: 100; background:rgba(255,255,255,1); font-size: 0.85em; padding:0 5px; min-width: 1200px;}
         #header h1 {}
         #header h1 a{font-size: 16px; font-weight: 700;}
@@ -69,7 +69,7 @@
 		#main .slide3 .img:nth-of-type(3){background: url("../img/main3.png") repeat-x;}
 		#main .slide4{background: url("../img/mainimg1.jpg") center center no-repeat; background-size: cover;}
         #main .swiper-pagination{position: absolute; bottom: 25px; left: 50%; transform: translate(-50%,0);}
-		#main .swiper-pagination-bullet{display: inline-block; width: 15px; height: 15px; background: #fff; opacity: 1; border-radius: 7.5px; margin-left:4px;}	/* 하단 버튼 비활성화 */
+		#main .swiper-pagination-bullet{display: inline-block; width: 15px; height: 15px; background: #fff; opacity: 1; border-radius: 7.5px; margin-left:4px; cursor: pointer;}	/* 하단 버튼 비활성화 */
 		#main .swiper-pagination-bullet.active{width: 50px; height: 15px; border-radius: 7.5px; background: red; transition: width 0.5s;}	/* 하단 버튼 활성화 */
 		.arrow{width: 30px; height: 30px; margin-top: -25px; position: absolute; z-index: 100; font-size: 50px; color: #666; line-height: 40px; text-align: center; cursor: pointer; content: '';
         border-top: 5px solid #666; /* 선 두께 */
@@ -147,8 +147,9 @@
         #main .orion_event .orion_event_viewport ul li div>p{display: block; margin: 15px auto 0;width: 25px; height: 25px; border-bottom: 4px solid #333; border-right: 4px solid #333; transform: rotate(-135deg)}
         #main .orion_event .orion_event_viewport ul li a{ display: block; width: 100%;height: 100% }
         #main .orion_event .orion_event_viewport ul li a img{position: absolute; right:20px; top:50%; transform: translate(0,-50%); width: 250px; border-radius: 50px;}
-        #main .orion_event .orion_event_viewport ul li a h5{position: absolute; left: 30px; top:50px; font-size: 20px; width: 240px; height: 25px; -webkit-text-overflow: clip; overflow: hidden;}
-        #main .orion_event .orion_event_viewport ul li a span{position: absolute; left: 30px; top:90px; width: 250px; font-size: 15px;}
+        #main .orion_event .orion_event_viewport ul li a h5{position: absolute; left: 30px; top:50px; font-size: 20px; width: 240px; height: 25px; text-overflow:ellipsis; overflow: hidden; white-space: nowrap;}
+        #main .orion_event .orion_event_viewport ul li a span{position: absolute; display: -webkit-box; left: 30px; top:90px; width: 240px;line-height: 20px; height: 80px; font-size: 15px; text-overflow:ellipsis; overflow: hidden; white-space: normal; -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; }
         #main .orion_event .orion_event_viewport ul li a p{display: none;}/*날짜값 가져오고 현재날짜 넣어서 n일 남음하기*/
         #main .orion_event .orion_event_viewport ul li a p.date{position: absolute; display: block; bottom: 30px; right: 270px;font-weight: 700;}/*날짜값 가져오고 현재날짜 넣어서 n일 남음하기*/
 
@@ -195,25 +196,3 @@
         footer .wrap section:nth-child(3) ul li img {vertical-align: middle; margin-right:10px;}
         
         footer .wrap section:nth-child(4) span{font-size: 10px;}
-       @media all and (max-width:1200px){
-           #main .slide1 div:nth-child(1){display: none;}
-           #main .slide1 div:nth-child(3){display: none;}
-            #main .swiper-container .slide1 .mainobject{left: 10px;}
-            #main .swiper-container .slide1 .mainobject .infobutton{left: 100px;}
-           #main .swiper-container .swiper-slide .mainobject {position:absolute; width: 700px; height: 300px; left:20px; top:calc(50% - 180px); z-index: 2;}
-           .center{width: 100% ;padding: 0px 10px;}
-           #main .product_info{width: 100%; }
-           .product_info .arrow.prev{display: none;}
-        }
-        @media all and (max-width:800px){
-            #header { width: 100%;}
-            #main{padding: 0 0;}
-            #main .swiper-slide .img:nth-of-type(2){background-position: right; background-size:contain;}
-            #header .nav {}
-            #header .nav .menu{display: none;flex-flow: column;}
-            #header .nav span{display: none;}
-            #header .nav .gnb_icon{display: none;}
-            #header .nav .iconbox{ display: none;}
-            #header .nav .Menubox{float:right; display: flex; margin-right:50px;}
-            
-        }

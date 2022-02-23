@@ -64,14 +64,18 @@ $(bullet).clone().prependTo(".swiper-pagination");
 $(".swiper-pagination-bullet:nth-of-type(2)").addClass("active");
 var bindex;
 $(window).resize(function(){
-    
-    $(".swiper-wrapper").css({"transition":"0s"})
-    $(".swiper-wrapper").css({"width":9*$(window).width()})
-    $(".swiper-wrapper").css({"left":-(3+bindex)*$(window).width()})
     let presize =$(window).width()
+    if ($(window).width()<=1200){
+        presize =1200
+    }
+    $(".swiper-wrapper").css({"transition":"0s"})
+    $(".swiper-wrapper").css({"width":9*presize})
+    $(".swiper-wrapper").css({"left":-(3+bindex)*presize})
+    
+    console.log($(window).width())
     click=false
     setTimeout(function(){
-        if (presize == $(window).width()){
+        if (presize == $(window).width()||presize ==1200){
             click=true
         }
     },300)
@@ -124,7 +128,26 @@ function bprev(){////이전버튼
     }
 let bflow;
 bflow = setInterval(bprev,3000)
-
+$(".swiper-pagination-bullet").click(function(){
+    if (click==true){
+            click=false;
+            let bullet=$(this).index()
+            let bleft = Number($(".swiper-wrapper").css("left").replace("px",""))
+            let bwidth = Number($(".swiper-slide").css("width").replace("px",""))
+            let index= (Math.floor(-bleft/bwidth)-1)%3;
+            $(".swiper-wrapper").css({"transition":"0.3s"})
+            $(".swiper-wrapper").css({"left":-bwidth*(3+(bullet+2)%3)+"px"})
+            $(".swiper-pagination-bullet").eq(bullet).addClass("active");
+            $(".swiper-pagination-bullet").eq(bullet).siblings().removeClass("active");
+            setTimeout(function(){
+                bleft = Number($(".swiper-wrapper").css("left").replace("px",""))
+                bwidth = Number($(".swiper-slide").css("width").replace("px",""))
+                bindex=Math.floor(-bleft/bwidth)%3;
+                click=true;
+            },300)
+        }
+    clearInterval(bflow)
+})
 $(".swiper-container .arrow").click(function(){
     if($(this).attr("class")=="arrow next"){///////////다음버튼
         bnext()
