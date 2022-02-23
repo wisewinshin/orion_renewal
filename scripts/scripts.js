@@ -62,8 +62,21 @@ const bullet = $(".swiper-pagination-bullet")
 $(bullet).clone().appendTo(".swiper-pagination");
 $(bullet).clone().prependTo(".swiper-pagination");
 $(".swiper-pagination-bullet:nth-of-type(2)").addClass("active");
-$(".swiper-container .arrow").click(function(){
-    if($(this).attr("class")=="arrow next"){
+var bindex;
+$(window).resize(function(){
+    
+    $(".swiper-wrapper").css({"transition":"0s"})
+    $(".swiper-wrapper").css({"width":9*$(window).width()})
+    $(".swiper-wrapper").css({"left":-(3+bindex)*$(window).width()})
+    let presize =$(window).width()
+    click=false
+    setTimeout(function(){
+        if (presize == $(window).width()){
+            click=true
+        }
+    },300)
+})
+function bnext(){///////////다음버튼
         if(click==true){
             click=false;
             
@@ -75,18 +88,18 @@ $(".swiper-container .arrow").click(function(){
             $(".swiper-pagination-bullet").eq(index).addClass("active");
             $(".swiper-pagination-bullet").eq(index).siblings().removeClass("active");
             setTimeout(function(){
-                if(index==1){
+                if(index==1){//// 무한루프 생성
                 $(".swiper-wrapper").css({"transition":"0s"})
                 $(".swiper-wrapper").css({"left":(-3*bwidth)+"px"})
             }
                 click=true;
+                bleft = Number($(".swiper-wrapper").css("left").replace("px",""))
+                bwidth = Number($(".swiper-slide").css("width").replace("px",""))
+                bindex=Math.floor(-bleft/bwidth)%3;
             },300)
         }
-        
-        ///2일때 초기로
-    
-    }
-    if($(this).attr("class")=="arrow prev"){
+}
+function bprev(){////이전버튼
         if (click==true){
             click=false;
             
@@ -98,15 +111,34 @@ $(".swiper-container .arrow").click(function(){
             $(".swiper-pagination-bullet").eq(index).addClass("active");
             $(".swiper-pagination-bullet").eq(index).siblings().removeClass("active");
             setTimeout(function(){
-                if(index==1){
+                if(index==1){//// 무한루프 생성
                 $(".swiper-wrapper").css({"transition":"0s"})
                 $(".swiper-wrapper").css({"left":(-3*bwidth)+"px"})
             }
+                bleft = Number($(".swiper-wrapper").css("left").replace("px",""))
+                bwidth = Number($(".swiper-slide").css("width").replace("px",""))
+                bindex=Math.floor(-bleft/bwidth)%3;
                 click=true;
             },300)
         }
     }
+let bflow;
+bflow = setInterval(bprev,3000)
+
+$(".swiper-container .arrow").click(function(){
+    if($(this).attr("class")=="arrow next"){///////////다음버튼
+        bnext()
+    }
+    if($(this).attr("class")=="arrow prev"){
+        bprev()
+    }
+    clearInterval(bflow)
 })
+
+
+
+
+
 //////////////////////메인배너
 
 //////////////////////제품소개 슬라이드

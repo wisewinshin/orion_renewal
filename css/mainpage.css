@@ -111,12 +111,12 @@
         #main .product_info .product_info_index li:nth-of-type(3) .product_info_product{ display: none;}
 		#main .product_info .product_info_index li ul{position: absolute; width: calc( 1200 * 3px); left: -1200px;}
 
-        #main .orion_notice {position: relative; width: 1200px; height: 270px; margin-top: 40px;}
+        #main .orion_notice {position: relative; width: 1200px; height: 300px; margin-top: 40px;}
         #main .orion_notice .dotarea {position: absolute; display: flex; justify-content: space-between; right: 40px; top:40px; width: 80px; height:20px;}
         #main .orion_notice .dotarea .orion_notice_dot {display: block; width: 20px;height: inherit; background:#fbb; border-radius: 20px;transition: .2s; cursor: pointer;}
         #main .orion_notice .dotarea .orion_notice_dot:hover {background:rgba(250,100,100,1.00)}
         #main .orion_notice .dotarea .orion_notice_dot.on {background:rgba(220,20,20,1.00)}
-        #main .orion_notice .orion_notice_viewport {margin-top: 20px; width: 1200px; height: 220px; overflow: hidden;}
+        #main .orion_notice .orion_notice_viewport {margin-top:40px; width: 1200px; height: 220px; overflow: hidden;}
         #main .orion_notice .orion_notice_viewport .orion_notice_list {position: relative; left: 0; width: 13800px; height: 200px; transition: .5s;}
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice {float: left; position: relative; width: 390px; margin: 0 10px 0 0; height: 200px;cursor: pointer;}
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice img {border-top-left-radius: 30px; border-bottom-left-radius: 30px; transition: .2s; object-fit: cover }
@@ -135,7 +135,7 @@
         #main .orion_event .orion_event_viewport{position: absolute; perspective:1000px; width: 560px;height: 300px;margin: 60px 10px; }
         #main .orion_event .orion_event_viewport:nth-of-type(2){left: 630px; }
         #main .orion_event .orion_event_viewport ul{position: relative; transform-style: preserve-3d; transform:rotateX(0deg) translateY(0px) translateZ(0px); transition: .5s}
-        #main .orion_event .orion_event_viewport ul li{position: absolute; width: 560px; height: 300px; transition: 0.5s; border-radius: 20px;overflow: hidden;}
+        #main .orion_event .orion_event_viewport ul li{position: absolute; width: 560px; height: 300px; transition: 0.5s; border-radius: 20px;overflow: hidden; border: 2px solid rgba(200,50,40,.3);box-sizing: border-box;}
         #main .orion_event .orion_event_viewport ul li:first-of-type{display: none;width: 560px; height: 300px; background: rgba(180,180,180,1.00); transform: rotateX(90deg) translateZ(150px) translateY(-150px) }
         #main .orion_event .orion_event_viewport ul li:nth-of-type(2){width: 560px; height: 300px; background: #ffcece; transform:translateZ(0px)  }
         #main .orion_event .orion_event_viewport ul li:nth-of-type(3){display: none;width: 560px; height: 300px; background: rgba(180,180,180,1.00); transform: rotateX(-90deg) translateZ(150px) translateY(150px) ;}
@@ -168,9 +168,10 @@
         .orion_sns {height: 240px; margin-top: 40px;}
         .orion_sns h2 {margin-top: 30px;}
         .orion_sns .orion_sns_icon_wrap {width: 180px; height: 180px; margin:20px 0 0 20px;}
-        .orion_sns .orion_sns_icon_wrap li{float: left;}
+        .orion_sns .orion_sns_icon_wrap li{float: left;transition: .3s}
         .orion_sns .orion_sns_icon_wrap li a{display: block; width:80px; height: 80px;margin: 0 10px 10px 0;}
-        .orion_sns .orion_sns_icon_wrap li a img{width::;width:80px; height: 80px;}
+        .orion_sns .orion_sns_icon_wrap li a img{width:80px; height: 80px;}
+        .orion_sns .orion_sns_icon_wrap li:hover{transform: scale(120%)}
         .orion_sns .orion_sns_realtime{}
 
         footer{background: url("../img/footerbg.png"); height: 390px;}
