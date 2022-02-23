@@ -2,7 +2,7 @@
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
         *{margin: 0; padding: 0;  font-family: 'Noto Sans KR', sans-serif; }
-        body{box-sizing: border-box;}
+        body{box-sizing: border-box;color: #333;}
         li{list-style: none ;}
         a{;text-decoration: none; color: inherit;}
         stong{font-weight: 600;}
@@ -19,8 +19,8 @@
         #header .nav .Menubox{display: none; flex-flow: column; justify-content: space-between; margin:10px; width: 50px; height: 50px; cursor: pointer; padding: 10px;}
         #header .nav .Menubox span{display: block; width: 40px; height: 6px; background: rgba(200,50,40,1.00); border-radius: 2px;}
         
-        #horizental_underline{display: none;position: absolute; z-index: 0; border-bottom: solid rgba(200,50,40,1.00) 3px; transition: linear .2s}
-        #vertical_underline{display: none; position: absolute; z-index: 101; border-bottom: solid rgba(200,50,40,1.00)  3px; transition: linear .2s}
+        #horizental_underline{display: none;position: absolute; z-index: 0; border-bottom: solid rgba(200,50,40,1) 4px; transition: linear .1s}
+        #vertical_underline{display: none; position: absolute; z-index: 101; border-bottom: solid rgba(200,50,40,1)  3px; transition: linear .1s}
         #header .nav .menu {display:flex; justify-content: space-between; width: 500px; height: 70px; float: left; line-height: 70px; padding:0 10px; text-align:center; }
         #header .nav .menu>li{position: relative;width:120px; height: 70px;}
         #header .nav .menu>li>a{text-align: center; line-height: 70px; transition:color 0.2s;}
@@ -40,9 +40,9 @@
         #header .nav .gnb_icon .iconbox .icon2{position: absolute; top:calc(50% - 22.5px);left:calc(50% - 22.5px); width: 45px; height: 45px;}
 
         #main {width: 100%;}
-        #main .swiper-container {width: 100%; height: 650px;}
-        #main .swiper-wrapper{height: 100%;}
-		#main .swiper-wrapper .swiper-slide{}
+        #main .swiper-container {width: 100%; height: 650px;position:relative; overflow: hidden;}
+        #main .swiper-wrapper{position:absolute; height: 100%; width: 900%; left: -300%; transition: .3s;}
+		#main .swiper-wrapper .swiper-slide{width: 11.111111111%; float: left;}
 		#main .swiper-slide{position: relative; display: flex; justify-content:flex-start; height: 100%;}
 		#main .swiper-slide .img{}
 		#main .swiper-slide .img:nth-of-type(1){width: calc( 50% - 600px);}
@@ -68,9 +68,9 @@
 		#main .slide3 .img:nth-of-type(2){background:url("../img/main3cut.jpg.png"); background-position: center center;}
 		#main .slide3 .img:nth-of-type(3){background: url("../img/main3.png") repeat-x;}
 		#main .slide4{background: url("../img/mainimg1.jpg") center center no-repeat; background-size: cover;}
-        #main .swiper-pagination{bottom: 25px;}
-		#main .swiper-pagination-bullet{width: 15px; height: 15px; background: #fff; opacity: 1;}	/* 하단 버튼 비활성화 */
-		#main .swiper-pagination-bullet-active{width: 50px; height: 15px; border-radius: 7.5px; background: red; transition: width 0.5s;}	/* 하단 버튼 활성화 */
+        #main .swiper-pagination{position: absolute; bottom: 25px; left: 50%; transform: translate(-50%,0);}
+		#main .swiper-pagination-bullet{display: inline-block; width: 15px; height: 15px; background: #fff; opacity: 1; border-radius: 7.5px; margin-left:4px;}	/* 하단 버튼 비활성화 */
+		#main .swiper-pagination-bullet.active{width: 50px; height: 15px; border-radius: 7.5px; background: red; transition: width 0.5s;}	/* 하단 버튼 활성화 */
 		.arrow{width: 30px; height: 30px; margin-top: -25px; position: absolute; z-index: 100; font-size: 50px; color: #666; line-height: 40px; text-align: center; cursor: pointer; content: '';
         border-top: 5px solid #666; /* 선 두께 */
         border-right: 5px solid #666; /* 선 두께 */
@@ -82,7 +82,7 @@
 		#main .arrow.next{left: calc(50% + 600px);
             transform: rotate(45deg); /* 각도 */   } 
 
-        #main .product_info{ position: relative; width: 1200px; height: 350px;}
+        #main .product_info{ position: relative; width: 1200px; height: 300px; margin-top: 40px;}
         #main .product_info div { float: right; color: #555555;}
         #main .product_info div i.on{color: red; }
         #main .product_info div i{margin: 0 10px; cursor: pointer;}
@@ -90,7 +90,7 @@
         #main .product_info div i.on:hover{color: red;}
 		
 
-        #main .product_info .arrow{position: absolute; top: calc(50% + 15px);}
+        #main .product_info .arrow{position: absolute; top: calc(50% + 42.5px);}
         #main .product_info .product_info_index {position:absolute; top: 100px;}
 		#main .product_info .product_info_index>li {position: absolute;width: 1200px; height: 200px; overflow:hidden;}
         #main .product_info .product_info_index>li .product_info_product {width: 4500px; position: absolute; left: -1200px; transition: 0.4s;}
@@ -111,21 +111,67 @@
         #main .product_info .product_info_index li:nth-of-type(3) .product_info_product{ display: none;}
 		#main .product_info .product_info_index li ul{position: absolute; width: calc( 1200 * 3px); left: -1200px;}
 
-        #main .orion_notice {width: 1200px; height: 270px;}
-        #main .orion_notice .orion_notice_dot {}
-        #main .orion_notice .orion_notice_viewport {margin-top: 30px; width: 1200px; height: 200px;}
-        #main .orion_notice .orion_notice_viewport .orion_notice_list {position: relative;width: 3600px; height: 200px;}
-        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice {float: left;position: relative; width: 400px; margin: 0 10px 0 0; height: 200px;cursor: pointer;}
-        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice img {border-top-left-radius: 30px; border-bottom-left-radius: 30px; transition: .2s}
+        #main .orion_notice {position: relative; width: 1200px; height: 270px; margin-top: 40px;}
+        #main .orion_notice .dotarea {position: absolute; display: flex; justify-content: space-between; right: 40px; top:40px; width: 80px; height:20px;}
+        #main .orion_notice .dotarea .orion_notice_dot {display: block; width: 20px;height: inherit; background:#fbb; border-radius: 20px;transition: .2s; cursor: pointer;}
+        #main .orion_notice .dotarea .orion_notice_dot:hover {background:rgba(250,100,100,1.00)}
+        #main .orion_notice .dotarea .orion_notice_dot.on {background:rgba(220,20,20,1.00)}
+        #main .orion_notice .orion_notice_viewport {margin-top: 20px; width: 1200px; height: 220px; overflow: hidden;}
+        #main .orion_notice .orion_notice_viewport .orion_notice_list {position: relative; left: 0; width: 13800px; height: 200px; transition: .5s;}
+        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice {float: left; position: relative; width: 390px; margin: 0 10px 0 0; height: 200px;cursor: pointer;}
+        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice img {border-top-left-radius: 30px; border-bottom-left-radius: 30px; transition: .2s; object-fit: cover }
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice:hover img {box-shadow:5px 5px 10px 0px ;transform: translate(-2px,-2px)}
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section {position: absolute; left: 200px ;top: 0; width: 180px; height: 200px; background: #eee; border-bottom-right-radius: 30px; border-top-right-radius: 30px; transition: .2s }
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice:hover section {box-shadow: 5px 5px 10px 0px ; transform: translate(-2px,-2px)}
-        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section h4 {display: block; width: 170px ;height: 50px; margin:5px 5px; overflow: hidden; text-overflow: ellipsis;}
+        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section h4 {display: block; width: 150px ;height: 50px; margin:15px 15px; overflow: hidden; text-overflow: ellipsis;}
         #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section h4 strong{}
-        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section p {display: block; width: 170px ;height: 120px; margin:5px 5px; overflow: hidden; text-overflow: ellipsis;}
+        #main .orion_notice .orion_notice_viewport .orion_notice_list .orion_notice_notice section p {display: block; width: 140px ;height: 90px; margin:15px 15px; font-size: 12px; line-height:15px;  overflow: hidden; text-overflow: ellipsis;}
 
-        #main .orion_event {width: 1200px; height: 360px;}
-        #main .orion_event {}
+        #main .orion_event {width: 1200px; height: 420px;margin-top: 40px;}
+        #main .orion_event {position: relative;}
+        #main .orion_event .orion_event_index {position: absolute;}
+        #main .orion_event .orion_event_index:nth-of-type(2) {top: 70px; left: 10px;}
+        #main .orion_event .orion_event_index:nth-of-type(3) {top: 70px; left: 640px;}
+        #main .orion_event .orion_event_viewport{position: absolute; perspective:1000px; width: 560px;height: 300px;margin: 60px 10px; }
+        #main .orion_event .orion_event_viewport:nth-of-type(2){left: 630px; }
+        #main .orion_event .orion_event_viewport ul{position: relative; transform-style: preserve-3d; transform:rotateX(0deg) translateY(0px) translateZ(0px); transition: .5s}
+        #main .orion_event .orion_event_viewport ul li{position: absolute; width: 560px; height: 300px; transition: 0.5s; border-radius: 20px;overflow: hidden;}
+        #main .orion_event .orion_event_viewport ul li:first-of-type{display: none;width: 560px; height: 300px; background: rgba(180,180,180,1.00); transform: rotateX(90deg) translateZ(150px) translateY(-150px) }
+        #main .orion_event .orion_event_viewport ul li:nth-of-type(2){width: 560px; height: 300px; background: #ffcece; transform:translateZ(0px)  }
+        #main .orion_event .orion_event_viewport ul li:nth-of-type(3){display: none;width: 560px; height: 300px; background: rgba(180,180,180,1.00); transform: rotateX(-90deg) translateZ(150px) translateY(150px) ;}
+        #main .orion_event .orion_event_viewport ul li div{position: absolute; width: 100% ;height: 70px; transition: .3s; opacity: 0; cursor: pointer;}
+        #main .orion_event .orion_event_viewport ul li div:first-of-type{top: 0;background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 200%);z-index: 2;}
+        #main .orion_event .orion_event_viewport ul li div:first-of-type:hover{opacity:1;}
+        #main .orion_event .orion_event_viewport ul li div:last-of-type{bottom: 0; transform: rotate(180deg); background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 200%);}
+        #main .orion_event .orion_event_viewport ul li div:last-of-type:hover{opacity:1;}
+        #main .orion_event .orion_event_viewport ul li div>p{display: block; margin: 15px auto 0;width: 25px; height: 25px; border-bottom: 4px solid #333; border-right: 4px solid #333; transform: rotate(-135deg)}
+        #main .orion_event .orion_event_viewport ul li a{ display: block; width: 100%;height: 100% }
+        #main .orion_event .orion_event_viewport ul li a img{position: absolute; right:20px; top:50%; transform: translate(0,-50%); width: 250px; border-radius: 50px;}
+        #main .orion_event .orion_event_viewport ul li a h5{position: absolute; left: 30px; top:50px; font-size: 20px; width: 240px; height: 25px; -webkit-text-overflow: clip; overflow: hidden;}
+        #main .orion_event .orion_event_viewport ul li a span{position: absolute; left: 30px; top:90px; width: 250px; font-size: 15px;}
+        #main .orion_event .orion_event_viewport ul li a p{display: none;}/*날짜값 가져오고 현재날짜 넣어서 n일 남음하기*/
+        #main .orion_event .orion_event_viewport ul li a p.date{position: absolute; display: block; bottom: 30px; right: 270px;font-weight: 700;}/*날짜값 가져오고 현재날짜 넣어서 n일 남음하기*/
+
+        .orion_hire_notice {height: 240px; background: #f7f7f7;margin-top: 40px;}
+        .orion_hire_notice  h2{}
+        .orion_hire_notice .orion_hire_notice_list{width: 1200px; display: flex;flex-flow:row;justify-content: space-between;margin-top: 20px;}
+        .orion_hire_notice .orion_hire_notice_list li{position: relative; height: 200px; background: #ed1a29; width: 290px; border-radius: 20px;transition: .3s;}
+        .orion_hire_notice .orion_hire_notice_list li:hover{background: #fff; transform: translate(-10px,-10px);box-shadow: 8px 8px 15px 5px #444}
+        .orion_hire_notice .orion_hire_notice_list li a{position: absolute; top: 0 ;left: 0; display: block; height: 200px;width: 270px; border-radius: 20px;margin: 0;color: #fff ;}
+        .orion_hire_notice .orion_hire_notice_list li:hover a{color: #ed1a29}
+        .orion_hire_notice .orion_hire_notice_list li a h4{margin: 30px 0px 0 20px; font-size: 23px;transition: .5s;color: inherit;}
+        .orion_hire_notice .orion_hire_notice_list li a span{display: block; margin: 10px 0px 0px 20px;font-size: 15px; line-height: 25px ;transition: .5s; color: inherit;}
+        .orion_hire_notice .orion_hire_notice_list li:first-of-type a img{position: absolute; right:10px; top:50%;}
+        .orion_hire_notice .orion_hire_notice_list li a img{position: absolute; right:10px; top: 60%; -webkit-filter : hue-rotate(0deg) grayscale(0%) brightness(8); transition:.5s; }
+        .orion_hire_notice .orion_hire_notice_list li:hover a img{-webkit-filter : hue-rotate(0deg) grayscale(0%) saturate(100%) brightness(1);}
+
+        .orion_sns {height: 240px; margin-top: 40px;}
+        .orion_sns h2 {margin-top: 30px;}
+        .orion_sns .orion_sns_icon_wrap {width: 180px; height: 180px; margin:20px 0 0 20px;}
+        .orion_sns .orion_sns_icon_wrap li{float: left;}
+        .orion_sns .orion_sns_icon_wrap li a{display: block; width:80px; height: 80px;margin: 0 10px 10px 0;}
+        .orion_sns .orion_sns_icon_wrap li a img{width::;width:80px; height: 80px;}
+        .orion_sns .orion_sns_realtime{}
 
         footer{background: url("../img/footerbg.png"); height: 390px;}
         footer .wrap{ width: 1200px; margin: 0 auto;}    
@@ -133,7 +179,7 @@
         footer .wrap section:nth-child(1) ul li{float: left; margin: 0 20px;}
         footer .wrap section:nth-child(1) ul li a {line-height: 87px;}
         footer .wrap section:nth-child(1) ul li a img {vertical-align:middle;}
-        footer .wrap section:nth-child(1) ul li::after{float: left; content: ""; margin:0 140px 0 0;}
+        footer .wrap section:nth-child(1) ul li::after{float: left; content: ""; margin:0 50px 0 0;}
         footer .wrap section:nth-child(2){height: 105px; width: 100%;}
         footer .wrap section:nth-child(2) ul{float: left;height: 20px; margin-bottom: 20px; margin-top: 20px;}
         footer .wrap section:nth-child(2) ul li{float: left;}

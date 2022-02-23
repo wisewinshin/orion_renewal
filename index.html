@@ -5,10 +5,8 @@
     <title>Orion</title>
     <link rel="shortcut icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/mainpage.css" type="text/css">
-    <link rel="stylesheet" href="swiper.min.css">
 	<script src="jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-	<script src="swiper.min.js" ></script>
 	<script src="scripts/scripts.js" type="text/javascript" defer></script>
     <meta name="naver-site-verification" content="e9aaeb5ba6c427d68b3884666acc8bad4b9c0462" />
 </head>
@@ -122,9 +120,11 @@
                     </div>
                 </li>
 			</ul>
-			<div class="swiper-pagination"></div>
-            <div class="prev arrow"></div>
-            <div class="next arrow"></div>
+			<div class="swiper-pagination">
+                <span class="swiper-pagination-bullet"></span>
+            </div>
+            <div class="arrow prev"></div>
+            <div class="arrow next"></div>
             
         </div>
         <section class="product_info center">
@@ -177,10 +177,15 @@
         <section class="orion_notice center">
             <h2>오리온 소식</h2>
             <span>오리온의 새로운 소식을 알아보세요!</span>
-            <span class="orion_notice_dot"></span>
+            <div class="dotarea">
+                <i class="orion_notice_dot on"></i>
+                <i class="orion_notice_dot"></i>
+                <i class="orion_notice_dot"></i>
+            </div>
             <div class="orion_notice_viewport">
                 <ul class="orion_notice_list">
                     <li class="orion_notice_notice">
+                        <a>
                         <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
                         <section class="orion_notice_box">
                             <h4>
@@ -191,22 +196,32 @@
                             <p>
                                 - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
                             </p>
-                        </section>                    
+                        </section>
+                        </a>
                     </li>
                     <li class="orion_notice_notice">
-                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <a>
+                        <img alt="소식1" src="img/오리온_사진자료_오리온_봄_한정판_3종_제품_이미지.jpg" width="200px" height="200px">
                         <section class="orion_notice_box">
                             <h4>
                                 <strong>
-                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                    오리온, 봄 한정판 초코파이情·초코송이·고래밥 ‘봄을 그리다’ 3종 출시
                                 </strong>
                             </h4>
                             <p>
-                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                                - ‘내가 그리는 봄’ 콘셉트...소비자들이 직접 포장 디자인을 완성할 수 있도록 기획
+
+- ‘초코파이情 딸기스케치’, 봄 하늘 담은 서정적 디자인과 상큼 달콤한 딸기 풍미 선사
+
+- ‘딸기송이’, 가장 많은 출시 요청 받은 딸기맛 초코송이
+
+- ‘딸기 고래밥’, 딸기 우유 크림과 딸기 시즈닝 뿌려 ‘핑크빛 고래밥’으로 변신
                             </p>
-                        </section>                    
+                        </section>
+                        </a>                 
                     </li>
                     <li class="orion_notice_notice">
+                        <a>
                         <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
                         <section class="orion_notice_box">
                             <h4>
@@ -217,7 +232,102 @@
                             <p>
                                 - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
                             </p>
-                        </section>                    
+                        </section>
+                        </a>                
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식4" src="img/notice4.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온 ‘닥터유’, 2021년 역대 최고 연매출 달성
+                                </strong>
+                            </h4>
+                            <p>
+                                - 닥터유 브랜드 연매출 680억 달성… 전년 대비 48% 성장
+
+- ‘맛있는 건강’ 테마로 브랜드 정체성 강화… 단백질 및 기능성 표시 일반식품, 음료 등 제품군 확대 지속
+
+- 글로벌 종합식품기업 도약 위한 핵심 브랜드로 성장 시켜갈 것
+                            </p>
+                        </section>
+                        </a>
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                </strong>
+                            </h4>
+                            <p>
+                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                            </p>
+                        </section>
+                        </a>                 
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                </strong>
+                            </h4>
+                            <p>
+                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                            </p>
+                        </section>
+                        </a>                
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                </strong>
+                            </h4>
+                            <p>
+                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                            </p>
+                        </section>
+                        </a>
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                </strong>
+                            </h4>
+                            <p>
+                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                            </p>
+                        </section>
+                        </a>                 
+                    </li>
+                    <li class="orion_notice_notice">
+                        <a>
+                        <img alt="소식1" src="img/notice1.jpg" width="200px" height="200px">
+                        <section class="orion_notice_box">
+                            <h4>
+                                <strong>
+                                    오리온, 국내 식품업계 최초‘글로벌 탄소배출 통합관리 시스템’ 도입
+                                </strong>
+                            </h4>
+                            <p>
+                                - 웹 기반 시스템 활용, 국내는 물론 해외 사업장까지 온실가스 저감화 기반 마련… ‘글로벌 친환경 경영’ 본격화 - 윤리경영 연계 ESG 강화 차원, 탄소배출량 외부 공개 예정
+                            </p>
+                        </section>
+                        </a>                
                     </li>
                 </ul>
             </div>
@@ -226,26 +336,83 @@
             <h2>이벤트 안내</h2>
             <span>오리온이 진행하는 이벤트!</span><!--이미지 하나 크게두고 옆에 제목내용두고 도트대신 진행중 완료된넣기 좌우 스크롤 인터벌-->
             <span class="orion_event_index">진행중인 이벤트</span>
-            <span class="orion_event_index">완료된 이벤트</span>
             <div class="orion_event_viewport">
                 <ul class="orion_event_ing">
                     <li>
+                        <div><p></p></div>
                         <a href="#">
-                            <img alt="orion_event_ing1">
+                            <img alt="orion_event_ing1" src="img/DADE_봄_한정_3종_신상선발대_1.jpg">
+                            <h5>봄을 그리다🌸 신상 선발대 모집</h5>
+                            <span>
+
+상큼함X3 에 빠져보고 싶다면<br>
+
+지금 바로 신청 GO GO!!</span>
+                            <p class="fordate">2022.2.17</p>
+                            <p class="date"></p>
+                        </a>
+                        <div><p></p></div>
+                    </li>
+                    <li>
+                        <div><p></p></div>
+                        <a href="#">
+                            <img src="img/DADE_닥터유_면역수_신상선발대.jpg" alt="orion_event_ing2">
+                            <h5>물 마시듯 매일매일 Dr.You 면역수 신상선발대 모집</h5>
+                            <span>물 마시듯 채우는 정상적인 면역기능!<br>
+
+아연 5mg을 함유한 닥터유 면역수의 탄생🎉<br>
+에너지 넘치는 일상을 위해
+
+몸에게 선물하는 밸런스💧<br>
+
+지금 바로 신청 GO GO!!</span>
+                            <p class="fordate">2022.2.18</p>
+                            <p class="date"></p>
+                        </a>
+                        <div><p></p></div>
+                    </li>
+                    <li>
+                        <div><p></p></div>
+                        <a href="#">
+                            <img alt="orion_event_ing3">
                             <h5>이벤트 제목</h5>
                             <span>이벤트 내용</span>
+                            <p class="fordate">2022.2.14</p>
+                            <p class="date"></p>
                         </a>
+                        <div><p></p></div>
                     </li>
                 </ul>
             </div>
+            <span class="orion_event_index">완료된 이벤트</span>
             <div class="orion_event_viewport">
                 <ul class="orion_event_end">
                     <li>
+                        <div><p></p></div>
                         <a href="#">
                             <img alt="orion_event_end1">
                             <h5>이벤트 제목</h5>
                             <span>이벤트 내용</span>
                         </a>
+                        <div><p></p></div>
+                    </li>
+                    <li>
+                        <div><p></p></div>
+                        <a href="#">
+                            <img alt="orion_event_end1">
+                            <h5>이벤트 제목</h5>
+                            <span>이벤트 내용</span>
+                        </a>
+                        <div><p></p></div>
+                    </li>
+                    <li>
+                        <div><p></p></div>
+                        <a href="#">
+                            <img alt="orion_event_end1">
+                            <h5>이벤트 제목</h5>
+                            <span>이벤트 내용</span>
+                        </a>
+                        <div><p></p></div>
                     </li>
                 </ul>
             </div>
@@ -256,15 +423,40 @@
                 <li>
                     <a href="#">
                         <h4>채용공고</h4>
-                        <span>내용</span>
-                        <img alt="">
+                        <span>진행중인 채용공고를<br>확인 하실 수 있습니다.</span>
+                        <img src="img/hire1.png" alt="채용공고">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h4>지원서 작성</h4>
+                        <span>온라인 입사지원서를<br>작성할 수 있습니다.</span>
+                        <img src="img/hire2.png" alt="지원서 작성">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h4>직무 소개</h4>
+                        <span>오리온의 다양한 직무를<br>소개합니다.</span>
+                        <img src="img/hire3.png" alt="직무 소개">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h4>공지사항</h4>
+                        <span>채용과 관련된 공지사항을<br>확인하시기 바랍니다.</span>
+                        <img src="img/hire4.png" alt="공지사항">
                     </a>
                 </li>
             </ul>
         </section>
         <section class="orion_sns center">
+            <h2>오리온 SNS</h2>
             <ul class="orion_sns_icon_wrap">
-                <li><a href="#"><img alt=""></a></li>
+                <li><a href="#"><img src="img/orion_insta.png" alt="오리온 인스타그램"></a></li>
+                <li><a href="#"><img src="img/orion_youtube.png" alt="오리온 유튜브"></a></li>
+                <li><a href="#"><img src="img/orion_facebook.png" alt="오리온 페이스북"></a></li>
+                <li><a href="#"><img src="img/orion_blog.png" alt="오리온 네이버 블로그"></a></li>
             </ul>
             <ul class="orion_sns_realtime">
                 <li>
@@ -306,24 +498,4 @@
     
         
 </body>
-<script>
-		var swiper = new Swiper('.swiper-container', {
-            autoplay: {
-                delay: 10000,	// 자동으로 화면 전환 10초
-                disableOnInteraction: true	// 손님이 넘길 때는 오토플레이 정지
-            },
-            slidesPerView: 1,	// 화면에 보여주는 이미지 개수
-            loop: true,	// 무한 루프 적용
-            pagination: {	// 하단에 점 표시 적용
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {	// 좌우 화살표 적용
-                nextEl: '.next',
-                prevEl: '.prev',
-            },
-			effect: 'slide', // slide, fade, cube, coverflow, flip
-			speed: 1000
-        });
-	</script>
 </html>
